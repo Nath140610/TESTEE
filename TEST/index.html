@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accès Arrêts</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="lock-only">
+  <div id="lockScreen" class="screen">
+    <div class="lock-card">
+      <div class="brand">🚌 Arrêts locaux</div>
+      <label class="hint">Entrer le code</label>
+      <input id="passInput" type="password" inputmode="numeric" maxlength="8" placeholder="Code" autofocus>
+      <button id="unlockBtn">Ouvrir</button>
+      <p id="lockError" class="error-msg" aria-live="polite"></p>
+    </div>
+  </div>
+  <script src="login.js"></script>
+</body>
+</html>

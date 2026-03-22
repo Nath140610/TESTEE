@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <title>Validation arrêt</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="light">
+  <main class="stack">
+    <header class="hero-lite">
+      <div>
+        <p class="eyebrow">Réseau local</p>
+        <h1>Validation sur zone</h1>
+      </div>
+      <div id="locStatus" class="chip muted">Localisation inerte</div>
+    </header>
+
+    <section class="card-lite">
+      <div class="row spaced">
+        <div>
+          <p class="overline">Arrêt en cours</p>
+          <h2 id="activeName">—</h2>
+          <p class="muted" id="nextStopLabel">Prochain : —</p>
+        </div>
+        <div class="pill" id="radiusBadge">Hors zone</div>
+      </div>
+
+      <div class="progress-block">
+        <div class="label">Chrono 2:00</div>
+        <div class="progress">
+          <div id="progressTime" class="progress-bar"></div>
+        </div>
+        <div class="mini-row">
+          <span class="muted">Temps restant</span>
+          <span class="value" id="countdown">02:00</span>
+        </div>
+      </div>
+
+      <div class="progress-block">
+        <div class="label">Distance au point (30 m requis)</div>
+        <div class="progress">
+          <div id="progressDist" class="progress-bar alt"></div>
+        </div>
+        <div class="mini-row">
+          <span class="muted">Distance</span>
+          <span class="value" id="activeDistance">— m</span>
+        </div>
+      </div>
+
+      <div class="grid stats">
+        <div class="stat-chip">
+          <p class="label">Précision GPS</p>
+          <p class="value" id="statAccuracy">— m</p>
+        </div>
+        <div class="stat-chip">
+          <p class="label">Vitesse</p>
+          <p class="value" id="statSpeed">— km/h</p>
+        </div>
+        <div class="stat-chip">
+          <p class="label">Vers suivant</p>
+          <p class="value" id="statNextDistance">— m</p>
+        </div>
+      </div>
+
+      <div class="passengers">
+        <div class="overlay-header">
+          <span class="eyebrow">Passagers (fictif)</span>
+        </div>
+        <div class="pax-row">
+          <div class="pax-badge wait">
+            <span class="label">En attente</span>
+            <span class="value" id="paxWaiting">0</span>
+          </div>
+          <div class="pax-badge board">
+            <span class="label">Montée</span>
+            <span class="value" id="paxBoarding">0</span>
+          </div>
+          <div class="pax-badge drop">
+            <span class="label">Descente</span>
+            <span class="value" id="paxAlighting">0</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="row actions">
+        <button id="askLocation" class="primary">Activer la localisation</button>
+        <button id="nextBtn" class="ghost">Arrêt suivant</button>
+      </div>
+
+      <p class="muted" id="activeHint">Entrez dans le cercle de 30 m pour lancer le chrono.</p>
+    </section>
+
+    <section class="card-lite">
+      <div class="overlay-header">
+        <span class="eyebrow">Arrêts</span>
+        <span class="chip">Périmètre 30 m</span>
+      </div>
+      <div id="stopsOverlay" class="stops-list"></div>
+    </section>
+  </main>
+
+  <div id="toast" class="toast hidden">Arrêt validé ✅</div>
+  <script src="app.js"></script>
+</body>
+</html>
